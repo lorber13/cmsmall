@@ -1,0 +1,167 @@
+POST http://localhost:3000/api/sessions
+Content-Type: application/json
+
+{
+    "username": "lorenzo.bertetto@exam.polito.it",
+    "password": "ComplexPassword"
+}
+###
+
+POST http://localhost:3000/api/sessions
+Content-Type: application/json
+
+{
+    "username": "giorgio.melone@exam.gov.it",
+    "password": "LoremIpsum"
+}
+###
+
+POST http://localhost:3000/api/sessions
+Content-Type: application/json
+
+{
+    "username": "maria.drago@exam.gov.it",
+    "password": "DolorSit"
+}
+###
+
+POST http://localhost:3000/api/sessions
+Content-Type: application/json
+
+{
+    "username": "lorenzo.bertetto@exam.polito.it",
+    "password": "WrongPassword"
+}
+###
+
+GET http://localhost:3000/api/sessions/current
+###
+
+DELETE http://localhost:3000/api/sessions/current
+###
+
+GET http://localhost:3000/api/published-pages
+###
+
+GET http://localhost:3000/api/pages
+###
+
+GET http://localhost:3000/api/title
+###
+
+GET http://localhost:3000/static/images/racket.jpg
+Content-Type: image/jpeg
+###
+
+POST http://localhost:3000/api/pages
+Content-Type: application/json
+
+{
+    "title": "New Title",
+    "publicationDate": "2023-06-26",
+    "contents": [
+        {
+            "type": "header",
+            "value": "New Header"
+        },
+        {
+            "type": "image",
+            "value": "racket.jpg"
+        },
+        {
+            "type": "paragraph",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ]
+}
+
+###
+PUT http://localhost:3000/api/pages/137
+Content-Type: application/json
+
+{
+    "title": "Title",
+    "author": "Maria Drago",
+    "publicationDate": null,
+    "contents": [
+        {
+            "type": "header",
+            "value": "Header"
+        },
+        {
+            "type": "image",
+            "value": "racket.jpg"
+        },
+        {
+            "type": "paragraph",
+            "value": "Edited paragraph."
+        }
+    ]
+}
+###
+
+POST http://localhost:3000/api/pages
+Content-Type: application/json
+
+{
+    "title": "Prova",
+    "contents": [
+        {
+            "type": "header"
+        },
+        {
+            "value": "Prova di un paragrafo. Spero funzioni"
+        }
+    ]
+}
+
+###
+
+PUT http://localhost:3000/api/title
+Content-Type: application/json
+
+{
+    "value": "Padel"
+}
+###
+
+PUT http://localhost:3000/api/title
+Content-Type: application/json
+
+{
+    "value": "Padel Mania"
+}
+
+###
+PUT http://localhost:3000/api/pages/28
+Content-Type: application/json
+
+{
+    "title": "Basic shots in Padel",
+    "publicationDate": "2024-04-23"
+}
+
+###
+DELETE http://localhost:3000/api/pages/4
+
+###
+POST http://localhost:3000/api/pages
+Content-Type: application/json
+
+{
+    "title": "Pagina nuova"
+
+
+}
+
+###
+// can be made only by an admin
+PUT http://localhost:3000/api/pages/73
+Content-Type: application/json
+
+{
+}
+
+###
+
+GET http://localhost:3000/api/users
